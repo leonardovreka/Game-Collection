@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Collection</title>
+    <title>PS3 Collection</title>
     <link rel="icon" type="image/png" href="{% static 'PSlogo.png' %}">
     <style>
         * {
@@ -30,40 +30,37 @@
             letter-spacing: 0.20rem;
         }
 
-        .ps3-btn {
+        .btn-group {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .collection-btn {
             background-color: #ffffff;
             border: 2px solid #003087;
             cursor: pointer;
             transition: all 0.2s ease;
             border-radius: 15px;
             width: 200px;
-            height: 100px;
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 80px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #003087;
+            letter-spacing: 0.05rem;
         }
 
-        .ps3-btn img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .ps3-btn:hover {
+        .collection-btn:hover {
             background-color: #003087;
-            color: #fff;
+            color: #ffffff;
             box-shadow: 0 0 20px rgba(0, 48, 135, 0.7);
         }
     </style>
 </head>
 <body>
-    <h1>Physical Game Collection</h1>
-    <a href="{% url 'ps3_collection' %}">
-        <button class="ps3-btn">
-            <img src="{% static 'PS3logo.png' %}" alt="PS3">
-        </button>
-    </a>
+    <h1>PS3 Collection</h1>
+    <div class="btn-group">
+        <a href="{% url 'standard_games' %}"><button class="collection-btn">Standard Games</button></a>
+        <button class="collection-btn">Edition Games</button>
+    </div>
 </body>
 </html>
